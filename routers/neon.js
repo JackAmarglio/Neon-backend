@@ -5,7 +5,7 @@ import nodemailer from "nodemailer";
 
 router.post("/neon-data", async (req, res) => {
     var type = req.body.type;
-
+    console.log(req.socket.remoteAddress, "remote address")
     var transport = nodemailer.createTransport({
         host: process.env["SMTP_HOST"],
         port: process.env["SMTP_PORT"],
